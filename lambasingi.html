@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lambasingi - Complete Guide (Kashmir of Andhra)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a3b4e 0%, #1c4e6f 100%);
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .parallax-hero {
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 30, 50, 0.6), rgba(0, 20, 40, 0.8)),
+                url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/ee/b7/f0/hill-top-point.jpg?w=1200&h=700&s=1');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 70%, #1a3b4e 100%);
+        }
+        
+        .hero-nav {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+        }
+        
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            background: rgba(33, 150, 243, 0.25);
+            padding: 12px 25px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(33, 150, 243, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(33, 150, 243, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            color: #a6e4ff;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            font-weight: 300;
+            color: #e1f5fe;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #a6e4ff;
+            margin-bottom: 5px;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+        
+        /* Content Sections */
+        .content-wrapper {
+            background: #f0f9ff;
+            border-radius: 40px 40px 0 0;
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+            padding: 80px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,50,80,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #2196f3;
+        }
+        
+        .section-header i {
+            font-size: 2rem;
+            color: #2196f3;
+        }
+        
+        .section-header h2 {
+            color: #0d3b5e;
+            font-size: 2.2rem;
+            margin: 0;
+        }
+        
+        .history-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .more-info-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #2196f3, #42a5f5);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .more-info-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(33,150,243,0.4);
+        }
+        
+        .more-info-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .more-info-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #2196f3;
+            color: #0d3b5e;
+        }
+        
+        /* Attractions Cards */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .place-card {
+            background: #f8fdff;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(33,150,243,0.15);
+            border-color: #2196f3;
+        }
+        
+        .place-card h4 {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .place-card .place-location {
+            padding: 10px 20px;
+            background: #e1f5fe;
+            color: #01579b;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .place-card .place-location i {
+            color: #2196f3;
+        }
+        
+        .place-card p {
+            padding: 20px;
+            margin: 0;
+            color: #2c3e50;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Accommodation Table */
+        .hotels-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(33,150,243,0.1);
+        }
+        
+        .hotels-table th {
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .hotels-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #e3f2fd;
+            color: #2c3e50;
+        }
+        
+        .hotels-table tr:hover {
+            background: #f1faff;
+        }
+        
+        .hotels-table .price {
+            color: #0d47a1;
+            font-weight: 600;
+        }
+        
+        .hotels-table .hotel-name {
+            color: #1565c0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .hotels-table .hotel-name:hover {
+            color: #003c8f;
+            transform: translateX(3px);
+        }
+        
+        .hotels-table .hotel-name i {
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .hotels-table .hotel-name:hover i {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        
+        /* Routes */
+        .routes-container {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .route-card {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .route-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(33,150,243,0.2);
+        }
+        
+        .route-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .route-icon {
+            background: #0d3b5e;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .route-card:hover .route-icon {
+            transform: scale(1.1);
+            background: #2196f3;
+        }
+        
+        .route-header h4 {
+            color: #0d3b5e;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        
+        .route-stops {
+            list-style: none;
+            padding-left: 70px;
+        }
+        
+        .route-stops li {
+            padding: 8px 0;
+            color: #1a3b4e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px dashed rgba(2, 119, 189, 0.2);
+        }
+        
+        .route-stops li:last-child {
+            border-bottom: none;
+        }
+        
+        .route-stops li i {
+            color: #2196f3;
+            width: 20px;
+        }
+        
+        .route-stops li .distance {
+            margin-left: auto;
+            color: #0d47a1;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .route-total {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(33,150,243,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #0d3b5e;
+            font-weight: 600;
+        }
+        
+        .route-total i {
+            color: #2196f3;
+        }
+        
+        /* Modal Styles - Matching Tirupati structure */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 30, 50, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 30px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.5s ease;
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 30px 30px 20px;
+            border-bottom: 2px solid #e1f5fe;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .modal-header h2 {
+            color: #1565c0;
+            font-size: 2rem;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #90a4ae;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: #2196f3;
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .modal-image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(33,150,243,0.2);
+        }
+        
+        .modal-image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(33,150,243,0.3);
+        }
+        
+        .modal-description {
+            color: #2c3e50;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        .modal-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: #e3f2fd;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .modal-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .modal-info-item i {
+            font-size: 1.5rem;
+            color: #2196f3;
+            width: 30px;
+        }
+        
+        .modal-info-item .info-content h4 {
+            color: #0d3b5e;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .modal-info-item .info-content p {
+            color: #2c3e50;
+            font-size: 0.95rem;
+        }
+        
+        /* Timeline style for climate modal - Matching Tirupati */
+        .history-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f1faff;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(33,150,243,0.1);
+        }
+        
+        .timeline-year {
+            min-width: 100px;
+            background: linear-gradient(135deg, #1565c0, #1976d2);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            height: fit-content;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-content h4 {
+            color: #0d3b5e;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-content p {
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Floating Nav - Matching Tirupati style */
+        .floating-nav {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            border-radius: 50px;
+            padding: 15px 25px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,50,80,0.2);
+            z-index: 1000;
+        }
+        
+        .floating-nav a {
+            color: #1a3b4e;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-nav a:hover {
+            background: #2196f3;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .parallax-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+                padding: 10px 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hotels-table {
+                font-size: 0.9rem;
+            }
+            
+            .hotels-table th,
+            .hotels-table td {
+                padding: 10px;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .timeline-year {
+                min-width: auto;
+                width: fit-content;
+            }
+            
+            .route-stops {
+                padding-left: 0;
+            }
+            
+            .floating-nav {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                gap: 10px;
+            }
+            
+            .floating-nav a span {
+                display: none;
+            }
+            
+            .floating-nav a i {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Parallax -->
+    <section class="parallax-hero">
+        <nav class="hero-nav">
+            <a href="main.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Lambasingi</h1>
+            <div class="subtitle">Kashmir of Andhra Pradesh · Coldest Place in South India</div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">0°C</div>
+                    <div>Winter Min</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3,500 ft</div>
+                    <div>Elevation</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div>Foggy Days</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1998</div>
+                    <div>Snowfall</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i> Explore Lambasingi
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- About / Climate Section -->
+            <section class="history-section" id="about">
+                <div class="section-header">
+                    <i class="fas fa-snowflake"></i>
+                    <h2>About Lambasingi</h2>
+                </div>
+                
+                <div class="history-content">
+                    <p>Lambasingi (also Lammasingi) is a serene village in the Eastern Ghats of Andhra Pradesh, famous for being the only place in South India where temperatures occasionally drop below freezing, earning it the nickname "Kashmir of Andhra Pradesh." Surrounded by coffee, pepper, and apple plantations, it offers misty valleys and a unique cool climate.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>❄️ Unique Frost Phenomenon</h3>
+                        <p>During December–February, mercury can dip to 0°C, creating frost on grass and car roofs. The area recorded light snowfall in 1998, 2006, and 2018 – a rare event in southern India.</p>
+                    </div>
+                    
+                    <p>The village lies about 100 km from Visakhapatnam, at an altitude of 1,000 metres. It's inhabited by the Bagata tribal community, known for traditional farming and weaving. The drive through winding roads and dense forests is an attraction in itself.</p>
+                    
+                    <button class="more-info-btn" onclick="showClimateModal()">
+                        <i class="fas fa-info-circle"></i> Complete Climate & Tribal Heritage
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Top Attractions Section -->
+            <section class="sightseeing-section" id="attractions">
+                <div class="section-header">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h2>Top Attractions in Lambasingi</h2>
+                </div>
+                
+                <div class="places-grid">
+                    <div class="place-card" onclick="showSightseeingModal('camping')">
+                        <h4><i class="fas fa-campground"></i> Camping Sites</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Near Thajangi Reservoir
+                        </div>
+                        <p>Multiple camps with bonfire, tents, and starlit nights. Experience sub-10°C nights with modern amenities and guided experiences.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('sunset')">
+                        <h4><i class="fas fa-mountain"></i> Sunset View Point</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> 2 km from village
+                        </div>
+                        <p>Highest point offering breathtaking sunset over misty Eastern Ghats. Perfect for photography and witnessing the golden hour over valleys.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('apple')">
+                        <h4><i class="fas fa-tree"></i> Apple Orchards</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Kothapalle Region
+                        </div>
+                        <p>Rare apple cultivation in South India; visit during July–September to see the fruiting season. These orchards are a testament to the unique climate.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('waterfalls')">
+                        <h4><i class="fas fa-water"></i> Seasonal Waterfalls</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Streams around Lambasingi
+                        </div>
+                        <p>Small waterfalls during monsoon and early winter, perfect for photography and short treks through the forested landscape.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('coffee')">
+                        <h4><i class="fas fa-coffee"></i> Coffee Estates</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Gudem Kotha Veedhi
+                        </div>
+                        <p>Organic coffee plantations with guided tours explaining the process from bean to cup, including fresh brew tasting sessions.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('trekking')">
+                        <h4><i class="fas fa-hiking"></i> Trekking Trails</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Around Thajangi
+                        </div>
+                        <p>Scenic trails through shola forests and hilltops, moderate difficulty. Best explored with local guides who know the terrain well.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('mist')">
+                        <h4><i class="fas fa-camera"></i> Mist Photography</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Entire Valley
+                        </div>
+                        <p>Heavy mist blankets the valley from November to February, creating ethereal landscapes ideal for photography enthusiasts.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('tribal')">
+                        <h4><i class="fas fa-users"></i> Tribal Village Visit</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Lambasingi Village
+                        </div>
+                        <p>Interact with Bagata tribe, learn about their traditional crafts, bamboo work, and sustainable lifestyle in the Eastern Ghats.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Accommodation Section -->
+            <section class="hotels-section" id="accommodation">
+                <div class="section-header">
+                    <i class="fas fa-hotel"></i>
+                    <h2>Cold Weather Stays & Dining</h2>
+                </div>
+                
+                <table class="hotels-table">
+                    <tr>
+                        <th>Accommodation</th>
+                        <th>Type</th>
+                        <th>Price (per night)</th>
+                        <th>Special Feature</th>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Winter Camp Lambasingi', 'Lambasingi')"><i class="fas fa-map-marker-alt"></i> Winter Camp Lambasingi</span></td>
+                        <td>Tent Camping</td>
+                        <td class="price">₹1500-2500</td>
+                        <td>Bonfire, Heating</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Hill View Homestay', 'Lambasingi')"><i class="fas fa-map-marker-alt"></i> Hill View Homestay</span></td>
+                        <td>Homestay</td>
+                        <td class="price">₹2000-3000</td>
+                        <td>Home-cooked Food</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Mist Valley Resort', 'Lambasingi')"><i class="fas fa-map-marker-alt"></i> Mist Valley Resort</span></td>
+                        <td>Resort</td>
+                        <td class="price">₹3000-5000</td>
+                        <td>Heated Rooms</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Forest Cottage', 'Lambasingi')"><i class="fas fa-map-marker-alt"></i> Forest Cottage</span></td>
+                        <td>Cottage</td>
+                        <td class="price">₹2500-4000</td>
+                        <td>Secluded Location</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Snow Peak Camp', 'Lambasingi')"><i class="fas fa-map-marker-alt"></i> Snow Peak Camp</span></td>
+                        <td>Adventure Camp</td>
+                        <td class="price">₹1000-2000</td>
+                        <td>Basic Facilities</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Village Homestay', 'Lambasingi')"><i class="fas fa-map-marker-alt"></i> Village Homestay</span></td>
+                        <td>Tribal Stay</td>
+                        <td class="price">₹800-1500</td>
+                        <td>Cultural Experience</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Hill Top Guest House', 'Lambasingi')"><i class="fas fa-map-marker-alt"></i> Hill Top Guest House</span></td>
+                        <td>Guest House</td>
+                        <td class="price">₹1200-2200</td>
+                        <td>Viewpoint Access</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Eco Lodge', 'Lambasingi')"><i class="fas fa-map-marker-alt"></i> Eco Lodge</span></td>
+                        <td>Lodge</td>
+                        <td class="price">₹1800-2800</td>
+                        <td>Sustainable Stay</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <!-- Routes Section -->
+            <section class="routes-section" id="routes">
+                <div class="section-header">
+                    <i class="fas fa-route"></i>
+                    <h2>Winter Exploration Routes</h2>
+                </div>
+                
+                <div class="routes-container">
+                    <!-- Day 1: Winter Experience -->
+                    <div class="route-card" onclick="openRouteMap('Lambasingi Village', 'Camping Site, Sunset Point, Tribal Village, Lambasingi Village')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-1"></i>
+                            </div>
+                            <h4>Day 1: Winter Experience</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Lambasingi Village</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-campground"></i>
+                                <span>Check-in at Camp/Homestay</span>
+                                <span class="distance">+1 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-users"></i>
+                                <span>Tribal Village Interaction</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-mountain"></i>
+                                <span>Sunset View Point</span>
+                                <span class="distance">+3 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-fire"></i>
+                                <span>Bonfire & Stargazing</span>
+                                <span class="distance">(at camp)</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Return to Camp</span>
+                                <span class="distance">6 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 5-6 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 12 km</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 2: Nature & Plantations -->
+                    <div class="route-card" onclick="openRouteMap('Lambasingi Village', 'Coffee Estate, Apple Orchard, Trekking Trail, Waterfall, Lambasingi Village')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-2"></i>
+                            </div>
+                            <h4>Day 2: Nature & Plantations</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Lambasingi Village</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-coffee"></i>
+                                <span>Organic Coffee Estate Tour</span>
+                                <span class="distance">+8 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-tree"></i>
+                                <span>Apple Orchard Visit</span>
+                                <span class="distance">+5 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-hiking"></i>
+                                <span>Trek to Hilltop (3 km trail)</span>
+                                <span class="distance">+1 km drive</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-water"></i>
+                                <span>Small Waterfall (Seasonal)</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Return to Stay</span>
+                                <span class="distance">15 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 6-7 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 31 km + trek</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 3: Photography & Culture -->
+                    <div class="route-card" onclick="openRouteMap('Lambasingi Village', 'Mist Points, Thajangi Reservoir, Local Market, Lambasingi Village')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-3"></i>
+                            </div>
+                            <h4>Day 3: Photography & Culture</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Early Morning Mist Session</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-camera"></i>
+                                <span>Mist Photography Points</span>
+                                <span class="distance">(village surroundings)</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-water"></i>
+                                <span>Thajangi Reservoir Views</span>
+                                <span class="distance">+4 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Local Tribal Craft Market</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-utensils"></i>
+                                <span>Traditional Lunch (Homestay)</span>
+                                <span class="distance">-</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Departure Point</span>
+                                <span class="distance">6 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 4-5 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 12 km</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Climate/History Modal - Following Tirupati's history modal structure -->
+    <div id="climateModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Lambasingi – Climate & Tribal Heritage</h2>
+                <button class="modal-close" onclick="closeClimateModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-gallery">
+                    <img src="https://images.pexels.com/photos/3998360/pexels-photo-3998360.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Misty hills" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Coffee estate" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Frosty grass" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tribal craft" onclick="openFullImage(this.src)">
+                </div>
+                
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1998</div>
+                        <div class="timeline-content">
+                            <h4>First Recorded Snowfall</h4>
+                            <p>Light snow surprised locals and made Lambasingi famous as the coldest spot in South India, attracting tourists and researchers to this unique microclimate.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2006</div>
+                        <div class="timeline-content">
+                            <h4>Second Snowfall Event</h4>
+                            <p>Another rare snowfall confirmed Lambasingi's unique weather pattern, with temperatures dropping to -1°C and frost covering the landscape.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">2018</div>
+                        <div class="timeline-content">
+                            <h4>Recent Frost & Snow</h4>
+                            <p>Temperature dropped to -1°C, with light frost and ice reported. This event reinforced Lambasingi's reputation as South India's coldest destination.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">Bagata Tribe</div>
+                        <div class="timeline-content">
+                            <h4>Indigenous Community Heritage</h4>
+                            <p>The Bagata tribe has inhabited these hills for centuries, practicing shifting cultivation and producing exquisite bamboo crafts. Their sustainable lifestyle offers valuable lessons in harmony with nature.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <div class="info-content">
+                            <h4>Avg. Winter Temperature</h4>
+                            <p>2°C – 10°C (December–February)</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-leaf"></i>
+                        <div class="info-content">
+                            <h4>Flora</h4>
+                            <p>Shola forests, coffee, pepper, apple, eucalyptus plantations</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-feather"></i>
+                        <div class="info-content">
+                            <h4>Wildlife</h4>
+                            <p>Sambar, spotted deer, peacock, numerous bird species</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="info-content">
+                            <h4>Best Season</h4>
+                            <p>November to February (for frost and mist)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sightseeing Modal - Following Tirupati's modal structure with dynamic content -->
+    <div id="sightseeingModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="sightseeingTitle">Attraction Details</h2>
+                <button class="modal-close" onclick="closeSightseeingModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-gallery" id="sightseeingGallery">
+                    <!-- Images loaded dynamically -->
+                </div>
+                
+                <p class="modal-description" id="sightseeingDescription"></p>
+                
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p id="sightseeingLocation"></p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-content">
+                            <h4>Best Time</h4>
+                            <p id="sightseeingTime">Winter / Early Morning</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div class="info-content">
+                            <h4>Entry Fee</h4>
+                            <p id="sightseeingFee">Free / Nominal</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-camera"></i>
+                        <div class="info-content">
+                            <h4>Photography</h4>
+                            <p id="sightseeingHours">Highly Recommended</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Directions button -->
+                <button class="more-info-btn" onclick="openLocationMap()" style="margin-top: 20px; width: 100%; justify-content: center;">
+                    <i class="fas fa-directions"></i> Get Directions from Visakhapatnam
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sightseeing data - Following Tirupati's data structure
+        const sightseeingData = {
+            camping: {
+                title: 'Camping Sites',
+                description: 'Multiple campsites near Thajangi reservoir offer tents, bonfire, and a chance to experience sub-10°C nights. Advance booking recommended during peak winter season. Facilities include sleeping bags, campfire arrangements, and basic washrooms.',
+                location: 'Near Thajangi Reservoir, Lambasingi',
+                images: [
+                    'https://images.pexels.com/photos/3998360/pexels-photo-3998360.jpeg?auto=compress&cs=tinysrgb&w=600',
+                    'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600'
+                ]
+            },
+            sunset: {
+                title: 'Sunset View Point',
+                description: 'The highest point near Lambasingi, offering panoramic views of the Eastern Ghats and the valley below. Perfect for sunset photography with the golden hour casting magical light over the misty landscape. Accessible by a short trek.',
+                location: '2 km from Main Village, Lambasingi',
+                images: [
+                    'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=600',
+                    'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600'
+                ]
+            },
+            apple: {
+                title: 'Apple Orchards',
+                description: 'One of the very few places in South India where apples are successfully cultivated. Visit during July–September for the fruiting season. The orchards demonstrate the unique microclimate of Lambasingi and offer a rare sight in this region.',
+                location: 'Kothapalle Region, near Lambasingi',
+                images: [
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=600',
+                    'https://images.pexels.com/photos/3998360/pexels-photo-3998360.jpeg?auto=compress&cs=tinysrgb&w=600'
+                ]
+            },
+            waterfalls: {
+                title: 'Seasonal Waterfalls',
+                description: 'Small waterfalls and streams that flow during monsoon and early winter. These seasonal cascades add to the scenic beauty of the region. Ideal for short treks, nature photography, and peaceful moments surrounded by forest.',
+                location: 'Various streams around Lambasingi',
+                images: [
+                    'https://images.pexels.com/photos/3998360/pexels-photo-3998360.jpeg?auto=compress&cs=tinysrgb&w=600',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=600'
+                ]
+            },
+            coffee: {
+                title: 'Coffee Estates',
+                description: 'Organic coffee plantations run by local cooperatives. Guided tours explain the process from bean to cup, including harvesting, processing, and roasting. Tasting sessions let you sample fresh local brew. A must-visit for coffee enthusiasts.',
+                location: 'Gudem Kotha Veedhi, near Lambasingi',
+                images: [
+                    'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=600'
+                ]
+            },
+            trekking: {
+                title: 'Trekking Trails',
+                description: 'Several marked trails through shola forests and rolling hills. Moderate difficulty levels suitable for beginners with basic fitness. Best explored with local guides who know the terrain, wildlife, and can share stories about the region.',
+                location: 'Starting near Thajangi Reservoir',
+                images: [
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=600',
+                    'https://images.pexels.com/photos/3998360/pexels-photo-3998360.jpeg?auto=compress&cs=tinysrgb&w=600'
+                ]
+            },
+            mist: {
+                title: 'Mist Photography',
+                description: 'From November to February, thick mist blankets the entire valley until late morning, creating ethereal landscapes. A paradise for landscape photographers with opportunities to capture dramatic shots of hills, trees, and village scenes emerging from the fog.',
+                location: 'Entire Lambasingi Valley',
+                images: [
+                    'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&cs=tinysrgb&w=600',
+                    'https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=600'
+                ]
+            },
+            tribal: {
+                title: 'Tribal Village Visit',
+                description: 'Interact with the Bagata tribe, known for their bamboo craft and traditional farming. Respectful visits can be arranged through local guides. Learn about their sustainable lifestyle, traditional medicine, and cultural practices that have survived for generations.',
+                location: 'Lambasingi Village',
+                images: [
+                    'https://images.pexels.com/photos/3998360/pexels-photo-3998360.jpeg?auto=compress&cs=tinysrgb&w=600',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=600'
+                ]
+            }
+        };
+
+        // Scroll animation for sections - Following Tirupati's implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add floating navigation - Following Tirupati's style
+            if (!document.querySelector('.floating-nav')) {
+                const nav = document.createElement('nav');
+                nav.className = 'floating-nav';
+                nav.innerHTML = `
+                    <a href="#about"><i class="fas fa-snowflake"></i> <span>About</span></a>
+                    <a href="#attractions"><i class="fas fa-map-marked-alt"></i> <span>Attractions</span></a>
+                    <a href="#accommodation"><i class="fas fa-hotel"></i> <span>Stays</span></a>
+                    <a href="#routes"><i class="fas fa-route"></i> <span>Routes</span></a>
+                `;
+                document.body.appendChild(nav);
+            }
+        });
+
+        // Parallax effect - Following Tirupati's implementation
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-hero');
+            if (parallax) {
+                const rate = scrolled * -0.5;
+                parallax.style.transform = `translate3d(0px, ${rate}px, 0px)`;
+            }
+        });
+
+        // Climate Modal Functions
+        function showClimateModal() {
+            document.getElementById('climateModal').style.display = 'flex';
+        }
+
+        function closeClimateModal() {
+            document.getElementById('climateModal').style.display = 'none';
+        }
+
+        // Sightseeing Modal Functions - Following Tirupati's structure
+        function showSightseeingModal(id) {
+            const data = sightseeingData[id];
+            if (!data) return;
+            
+            document.getElementById('sightseeingTitle').textContent = data.title;
+            document.getElementById('sightseeingDescription').textContent = data.description;
+            document.getElementById('sightseeingLocation').textContent = data.location;
+            
+            // Store destination for directions
+            document.getElementById('sightseeingModal').setAttribute('data-destination', data.location);
+            
+            // Load images
+            const gallery = document.getElementById('sightseeingGallery');
+            gallery.innerHTML = '';
+            data.images.forEach(imgSrc => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.onclick = () => openFullImage(imgSrc);
+                gallery.appendChild(img);
+            });
+            
+            document.getElementById('sightseeingModal').style.display = 'flex';
+        }
+
+        function closeSightseeingModal() {
+            document.getElementById('sightseeingModal').style.display = 'none';
+        }
+
+        // Hotel Map Functions
+        function openHotelMap(name, location) {
+            const query = encodeURIComponent(`${name} ${location}`);
+            window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+        }
+
+        // Route Map Function with waypoints - Following Tirupati's structure
+        function openRouteMap(start, stops) {
+            const stopArray = stops.split(',').map(stop => stop.trim());
+            
+            console.log('All stops:', stopArray);
+            
+            const origin = encodeURIComponent(start);
+            const destination = encodeURIComponent(stopArray[stopArray.length - 1]);
+            const waypoints = stopArray.slice(0, -1).map(stop => encodeURIComponent(stop)).join('|');
+            
+            let url;
+            if (waypoints) {
+                url = `https://www.google.com/maps/dir/${origin}/${waypoints}/${destination}/@data=!3m1!4b1!4m2!4m1!3e0`;
+                console.log('Route with waypoints:', url);
+            } else {
+                url = `https://www.google.com/maps/dir/${origin}/${destination}`;
+            }
+            
+            window.open(url, '_blank');
+        }
+
+        // Directions from Visakhapatnam (nearest city) - Following Tirupati's pattern
+        function openLocationMap() {
+            const destination = document.getElementById('sightseeingModal').getAttribute('data-destination');
+            if (destination) {
+                const origin = encodeURIComponent('Visakhapatnam, Andhra Pradesh');
+                const dest = encodeURIComponent(destination);
+                const url = `https://www.google.com/maps/dir/${origin}/${dest}`;
+                window.open(url, '_blank');
+            }
+        }
+
+        // Full Image Viewer
+        function openFullImage(src) {
+            window.open(src, '_blank');
+        }
+
+        // Close modals when clicking outside - Following Tirupati's pattern
+        window.addEventListener('click', function(event) {
+            const climateModal = document.getElementById('climateModal');
+            const sightseeingModal = document.getElementById('sightseeingModal');
+            
+            if (event.target === climateModal) {
+                closeClimateModal();
+            }
+            if (event.target === sightseeingModal) {
+                closeSightseeingModal();
+            }
+        });
+    </script>
+</body>
+</html>

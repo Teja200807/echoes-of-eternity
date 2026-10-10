@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arunachaleswarar Temple - Complete Guide (Pancha Bhoota Sthalam - Fire)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #BF360C 0%, #D84315 100%);
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .parallax-hero {
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                url('https://i.pinimg.com/736x/58/44/b1/5844b1030a5bc01aaef78b40b0c307c8.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 70%, #BF360C 100%);
+        }
+        
+        .hero-nav {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+        }
+        
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 87, 34, 0.3);
+            padding: 12px 25px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 87, 34, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 87, 34, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            color: #ff5722;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff5722;
+            margin-bottom: 5px;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
+        }
+        
+        /* Content Sections */
+        .content-wrapper {
+            background: #f8f9fa;
+            border-radius: 40px 40px 0 0;
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+            padding: 80px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ff5722;
+        }
+        
+        .section-header i {
+            font-size: 2rem;
+            color: #ff5722;
+        }
+        
+        .section-header h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin: 0;
+        }
+        
+        .history-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .more-info-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff5722, #ff7043);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .more-info-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,87,34,0.3);
+        }
+        
+        .more-info-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .more-info-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #ff5722;
+        }
+        
+        /* Sightseeing Cards */
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .place-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: #ff5722;
+        }
+        
+        .place-card h4 {
+            background: linear-gradient(135deg, #BF360C 0%, #D84315 100%);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .place-card .place-location {
+            padding: 10px 20px;
+            background: #e9ecef;
+            color: #495057;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .place-card .place-location i {
+            color: #ff5722;
+        }
+        
+        .place-card p {
+            padding: 20px;
+            margin: 0;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        /* Hotels Table */
+        .hotels-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .hotels-table th {
+            background: linear-gradient(135deg, #BF360C 0%, #D84315 100%);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .hotels-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        
+        .hotels-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .hotels-table .price {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        
+        .hotels-table .hotel-name {
+            color: #ff5722;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .hotels-table .hotel-name:hover {
+            color: #d32f2f;
+            transform: translateX(3px);
+        }
+        
+        .hotels-table .hotel-name i {
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .hotels-table .hotel-name:hover i {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        
+        /* Routes */
+        .routes-container {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .route-card {
+            background: linear-gradient(135deg, #ffccbc 0%, #ffab91 100%);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .route-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .route-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .route-icon {
+            background: #BF360C;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .route-card:hover .route-icon {
+            transform: scale(1.1);
+            background: #ff5722;
+        }
+        
+        .route-header h4 {
+            color: #BF360C;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        
+        .route-stops {
+            list-style: none;
+            padding-left: 70px;
+        }
+        
+        .route-stops li {
+            padding: 8px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+        
+        .route-stops li:last-child {
+            border-bottom: none;
+        }
+        
+        .route-stops li i {
+            color: #ff5722;
+            width: 20px;
+        }
+        
+        .route-stops li .distance {
+            margin-left: auto;
+            color: #27ae60;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .route-total {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #BF360C;
+            font-weight: 600;
+        }
+        
+        .route-total i {
+            color: #ff5722;
+        }
+        
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 30px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.5s ease;
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 30px 30px 20px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .modal-header h2 {
+            color: #ff5722;
+            font-size: 2rem;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: #ff5722;
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .modal-image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .modal-image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .modal-description {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        .modal-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .modal-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .modal-info-item i {
+            font-size: 1.5rem;
+            color: #ff5722;
+            width: 30px;
+        }
+        
+        .modal-info-item .info-content h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .modal-info-item .info-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        /* History Timeline */
+        .history-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-year {
+            min-width: 100px;
+            background: linear-gradient(135deg, #ff5722, #ff7043);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            height: fit-content;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-content h4 {
+            color: #BF360C;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Floating Nav */
+        .floating-nav {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff5722 0%, #ff7043 100%);
+            border-radius: 50px;
+            padding: 15px 25px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        .floating-nav a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .floating-nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .parallax-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+                padding: 10px 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hotels-table {
+                font-size: 0.9rem;
+            }
+            
+            .hotels-table th,
+            .hotels-table td {
+                padding: 10px;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .timeline-year {
+                min-width: auto;
+                width: fit-content;
+            }
+            
+            .route-stops {
+                padding-left: 0;
+            }
+            
+            .floating-nav {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                gap: 10px;
+            }
+            
+            .floating-nav a span {
+                display: none;
+            }
+            
+            .floating-nav a i {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Parallax -->
+    <section class="parallax-hero">
+        <nav class="hero-nav">
+            <a href="main.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Arunachaleswarar Temple</h1>
+            <div class="subtitle">Pancha Bhoota Sthalam (Fire Element) | Tiruvannamalai</div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">217 ft</div>
+                    <div>Tallest Gopuram</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25 acres</div>
+                    <div>Temple Area</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3M+</div>
+                    <div>Devotees/Year</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">9th Cent</div>
+                    <div>Construction Began</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i> Scroll for Details
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- History Section -->
+            <section class="history-section" id="history">
+                <div class="section-header">
+                    <i class="fas fa-fire"></i>
+                    <h2>History & Architecture</h2>
+                </div>
+                
+                <div class="history-content">
+                    <p>Arunachaleswarar Temple, one of the Pancha Bhoota Sthalams representing the fire element, is a monumental Hindu temple dedicated to Lord Shiva. Located at the base of the sacred Arunachala Hill in Tiruvannamalai, this temple complex spans 25 acres and features the fourth tallest gopuram in the world at 217 feet. The temple is a living monument of faith, with daily rituals unchanged for centuries.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>🔥 Agni Lingam Significance</h3>
+                        <p>The temple represents the fire element among the five Pancha Bhoota Stalams. Legend states that Lord Shiva manifested as an infinite column of fire here, and the shrine houses the Agni Lingam as the main deity. The annual Karthigai Deepam festival sees a massive lamp lit atop the hill, visible for 30km around.</p>
+                    </div>
+                    
+                    <button class="more-info-btn" onclick="showHistoryModal()">
+                        <i class="fas fa-info-circle"></i> More Information & Architecture Details
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Sightseeing Section -->
+            <section class="sightseeing-section" id="sightseeing">
+                <div class="section-header">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h2>Top Spiritual Attractions</h2>
+                </div>
+                
+                <div class="places-grid">
+                    <div class="place-card" onclick="showSightseeingModal('hill')">
+                        <h4><i class="fas fa-mountain"></i> Arunachala Hill</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Adjacent to Temple
+                        </div>
+                        <p>Sacred 2,660 ft hill representing Lord Shiva as fire. Circumambulation (Girivalam) of the 14km path around the hill on full moon nights is considered highly meritorious. The hill is famous for the annual Karthigai Deepam festival.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('ramana')">
+                        <h4><i class="fas fa-om"></i> Ramana Maharshi Ashram</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> 2km from Temple
+                        </div>
+                        <p>World-famous ashram where the sage Ramana Maharshi lived and attained enlightenment. Includes his samadhi, meditation hall, and library with spiritual literature. Attracts seekers from all over the world.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('skanda')">
+                        <h4><i class="fas fa-heart"></i> Skanda Ashram</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> On Arunachala Hill, 3km trek
+                        </div>
+                        <p>Ashram where Ramana Maharshi first stayed on the hill. Located near Virupaksha Cave, it offers panoramic views of Tiruvannamalai and is a peaceful meditation spot with its original rustic charm.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('virupaksha')">
+                        <h4><i class="fas fa-cave"></i> Virupaksha Cave</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> On Arunachala Hill, 2km trek
+                        </div>
+                        <p>Ancient cave where Ramana Maharshi meditated for several years. The cave has a natural Shiva lingam and is a powerful meditation spot visited by spiritual seekers worldwide. The interior is simple yet powerfully spiritual.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('seshadri')">
+                        <h4><i class="fas fa-user-alt"></i> Seshadri Swamigal Ashram</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> 1km from Temple
+                        </div>
+                        <p>Ashram dedicated to another great saint of Tiruvannamalai. Known for its peaceful atmosphere and spiritual vibrations, it's a significant stop for pilgrims. The ashram maintains daily worship and feeding programs.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('pachai')">
+                        <h4><i class="fas fa-female"></i> Pachaiamman Temple</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Near Temple
+                        </div>
+                        <p>Ancient temple dedicated to the goddess Pachaiamman, considered the guardian deity of the region. It marks the starting point of the Girivalam circumambulation path. Features beautiful pillared halls and carvings.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('girivalam')">
+                        <h4><i class="fas fa-road"></i> Girivalam Path Temples</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> 14km circumference around hill
+                        </div>
+                        <p>Eight sacred lingams along the circumambulation path: Indra, Agni, Yama, Niruthi, Varuna, Vayu, Kubera, and Esanya Lingams. Each has specific spiritual significance. Full moon nights see thousands of pilgrims walking the path.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('museum')">
+                        <h4><i class="fas fa-landmark"></i> Arunachala Museum</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Near Temple
+                        </div>
+                        <p>Museum displaying temple history, artifacts, inscriptions, photographs of saints, and information about the spiritual significance of Arunachala. Great for understanding the region's heritage and the Pancha Bhoota concept.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Hotels Section -->
+            <section class="hotels-section" id="hotels">
+                <div class="section-header">
+                    <i class="fas fa-hotel"></i>
+                    <h2>Hotels & Dining</h2>
+                </div>
+                
+                <table class="hotels-table">
+                    <tr>
+                        <th>Hotel/Restaurant</th>
+                        <th>Location</th>
+                        <th>Price (per night)</th>
+                        <th>Specialty</th>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Arunachala Ramana Hotel', 'Tiruvannamalai')"><i class="fas fa-map-marker-alt"></i> Arunachala Ramana Hotel</span></td>
+                        <td>Near Temple</td>
+                        <td class="price">₹3000+</td>
+                        <td>Spiritual luxury</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Sparsa Resort', 'Tiruvannamalai')"><i class="fas fa-map-marker-alt"></i> Sparsa Resort</span></td>
+                        <td>Hill View</td>
+                        <td class="price">₹5000+</td>
+                        <td>Yoga & meditation</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Hotel Arunachala', 'Tiruvannamalai')"><i class="fas fa-map-marker-alt"></i> Hotel Arunachala</span></td>
+                        <td>Girivalam Road</td>
+                        <td class="price">₹1500-3000</td>
+                        <td>Budget temple stay</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Deepam Inn', 'Tiruvannamalai')"><i class="fas fa-map-marker-alt"></i> Deepam Inn</span></td>
+                        <td>Main Road</td>
+                        <td class="price">₹2000-3500</td>
+                        <td>AC comfort rooms</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Shanti Lodge', 'Tiruvannamalai')"><i class="fas fa-map-marker-alt"></i> Shanti Lodge</span></td>
+                        <td>Near Ashram</td>
+                        <td class="price">₹800-1500</td>
+                        <td>Dharamshala style</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Annapoorna', 'Tiruvannamalai')"><i class="fas fa-map-marker-alt"></i> Annapoorna</span></td>
+                        <td>Temple Road</td>
+                        <td class="price">₹100-300</td>
+                        <td>South Indian meals</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Surya Restaurant', 'Tiruvannamalai')"><i class="fas fa-map-marker-alt"></i> Surya Restaurant</span></td>
+                        <td>Girivalam Path</td>
+                        <td class="price">₹150-400</td>
+                        <td>Vegetarian thali</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Natural Fresh', 'Tiruvannamalai')"><i class="fas fa-map-marker-alt"></i> Natural Fresh</span></td>
+                        <td>Near Ashram</td>
+                        <td class="price">₹200-500</td>
+                        <td>Juice & smoothies</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <!-- Routes Section - All starting from Arunachaleswarar Temple -->
+            <section class="routes-section" id="routes">
+                <div class="section-header">
+                    <i class="fas fa-route"></i>
+                    <h2>Sightseeing Routes (Starting from Arunachaleswarar Temple)</h2>
+                </div>
+                
+                <div class="routes-container">
+                    <!-- Day 1: Temple & Hill Circuit -->
+                    <div class="route-card" onclick="openRouteMap('Arunachaleswarar Temple', 'Pachaiamman Temple, Girivalam Path, Arunachala Hill, Arunachaleswarar Temple')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-1"></i>
+                            </div>
+                            <h4>Day 1: Temple & Hill Circuit</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Arunachaleswarar Temple (Main Shrine)</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-female"></i>
+                                <span>Pachaiamman Temple (Start of Girivalam)</span>
+                                <span class="distance">+1 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-road"></i>
+                                <span>Girivalam Path (8 Sacred Lingams)</span>
+                                <span class="distance">+14 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-mountain"></i>
+                                <span>Arunachala Hill Base</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-temple"></i>
+                                <span>Evening Aarti at Main Temple</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Return to Temple</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 5-7 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 19 km</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 2: Ashrams & Caves Trail -->
+                    <div class="route-card" onclick="openRouteMap('Arunachaleswarar Temple', 'Ramana Maharshi Ashram, Virupaksha Cave, Skanda Ashram, Seshadri Ashram, Arunachaleswarar Temple')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-2"></i>
+                            </div>
+                            <h4>Day 2: Ashrams & Caves Trail</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Arunachaleswarar Temple</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-om"></i>
+                                <span>Ramana Maharshi Ashram</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-cave"></i>
+                                <span>Virupaksha Cave (Trek starts)</span>
+                                <span class="distance">+2 km trek</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-heart"></i>
+                                <span>Skanda Ashram</span>
+                                <span class="distance">+1 km trek</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-mountain"></i>
+                                <span>Arunachala Hill Viewpoint</span>
+                                <span class="distance">+1 km trek</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-alt"></i>
+                                <span>Seshadri Swamigal Ashram</span>
+                                <span class="distance">+3 km (descent)</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Return to Temple</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 6-8 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 11 km + 4 km trek</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 3: Extended Heritage Tour -->
+                    <div class="route-card" onclick="openRouteMap('Arunachaleswarar Temple', 'Gingee Fort, Sathanur Dam, Arunachala Museum, Arunachaleswarar Temple')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-3"></i>
+                            </div>
+                            <h4>Day 3: Extended Heritage Tour</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Arunachaleswarar Temple</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-fort-awesome"></i>
+                                <span>Gingee Fort (UNESCO Nominee)</span>
+                                <span class="distance">+40 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-water"></i>
+                                <span>Sathanur Dam & Crocodile Park</span>
+                                <span class="distance">+35 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-landmark"></i>
+                                <span>Arunachala Museum</span>
+                                <span class="distance">+45 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Tiruvannamalai Local Markets</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Return to Temple</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 8-10 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 122 km</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="historyModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Complete History & Architecture of Arunachaleswarar Temple</h2>
+                <button class="modal-close" onclick="closeHistoryModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-gallery">
+                    <img src="https://i.pinimg.com/736x/58/44/b1/5844b1030a5bc01aaef78b40b0c307c8.jpg" alt="Temple Main Gopuram" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg" alt="Karthigai Deepam" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg" alt="Temple Architecture" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg" alt="Temple Interior" onclick="openFullImage(this.src)">
+                </div>
+                
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">9th Century</div>
+                        <div class="timeline-content">
+                            <h4>Chola Dynasty Construction</h4>
+                            <p>The main structure of the temple was built by the Chola kings. The Cholas were great patrons of Shaivism and established the temple as a major center of worship. The earliest inscriptions date from this period.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">12th-13th Century</div>
+                        <div class="timeline-content">
+                            <h4>Pandya & Hoysala Contributions</h4>
+                            <p>Later dynasties added mandapams and shrines. The Hoysalas contributed intricate carvings seen in some parts of the temple, blending their distinctive style with the existing Dravidian architecture.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">14th-16th Century</div>
+                        <div class="timeline-content">
+                            <h4>Vijayanagara Empire Golden Era</h4>
+                            <p>The Vijayanagara kings made significant additions, including the massive gopurams. The 11-tiered Rajagopuram (217 ft) was built during this period, making it one of the tallest temple towers in the world.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">17th Century</div>
+                        <div class="timeline-content">
+                            <h4>Nayak Dynasty Additions</h4>
+                            <p>The Nayaks of Madurai added several mandapams and completed the outer prakarams. They introduced the thousand-pillared hall and refined the temple's rituals.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1879-1950</div>
+                        <div class="timeline-content">
+                            <h4>Ramana Maharshi Era</h4>
+                            <p>Sage Ramana Maharshi's presence at Arunachala brought global attention to the temple. His teachings attracted spiritual seekers worldwide, establishing Tiruvannamalai as an international spiritual destination.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">Present Day</div>
+                        <div class="timeline-content">
+                            <h4>Global Spiritual Center</h4>
+                            <p>The temple attracts over 3 million devotees annually, with the Karthigai Deepam festival being the grandest celebration. The temple continues to be a living monument of faith, with daily rituals unchanged for centuries.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <i class="fas fa-archway"></i>
+                        <div class="info-content">
+                            <h4>Architectural Style</h4>
+                            <p>Dravidian with 4 main gopurams, tallest 217 ft (4th in world)</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-fire"></i>
+                        <div class="info-content">
+                            <h4>Element Represented</h4>
+                            <p>Fire (Agni) - One of Pancha Bhoota Stalams</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="info-content">
+                            <h4>Karthigai Deepam</h4>
+                            <p>Annual festival lighting lamp on hill visible for 30km</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-crown"></i>
+                        <div class="info-content">
+                            <h4>Royal Patronage</h4>
+                            <p>Chola, Pandya, Vijayanagara, Nayak dynasties</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sightseeing Modal -->
+    <div id="sightseeingModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="sightseeingTitle">Place Details</h2>
+                <button class="modal-close" onclick="closeSightseeingModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-gallery" id="sightseeingGallery">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+                
+                <p class="modal-description" id="sightseeingDescription"></p>
+                
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p id="sightseeingLocation"></p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-content">
+                            <h4>Best Time to Visit</h4>
+                            <p id="sightseeingTime">October to March, especially full moon days</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div class="info-content">
+                            <h4>Entry Fee</h4>
+                            <p id="sightseeingFee">Free - ₹50</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-content">
+                            <h4>Opening Hours</h4>
+                            <p id="sightseeingHours">6:00 AM - 9:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Directions button -->
+                <button class="more-info-btn" onclick="openLocationMap()" style="margin-top: 20px; width: 100%; justify-content: center;">
+                    <i class="fas fa-directions"></i> Get Directions from Temple
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Scroll animation for sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add floating navigation
+            const nav = document.createElement('nav');
+            nav.className = 'floating-nav';
+            nav.innerHTML = `
+                <a href="#history"><i class="fas fa-fire"></i> <span>History</span></a>
+                <a href="#sightseeing"><i class="fas fa-map-marked-alt"></i> <span>Attractions</span></a>
+                <a href="#hotels"><i class="fas fa-hotel"></i> <span>Hotels</span></a>
+                <a href="#routes"><i class="fas fa-route"></i> <span>Routes</span></a>
+            `;
+            document.body.appendChild(nav);
+        });
+        
+        // Parallax effect enhancement
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-hero');
+            const rate = scrolled * -0.5;
+            parallax.style.transform = `translate3d(0px, ${rate}px, 0px)`;
+        });
+
+        // History Modal Functions
+        function showHistoryModal() {
+            document.getElementById('historyModal').style.display = 'flex';
+        }
+
+        function closeHistoryModal() {
+            document.getElementById('historyModal').style.display = 'none';
+        }
+
+        // Sightseeing Modal Functions
+        const sightseeingData = {
+            hill: {
+                title: 'Arunachala Hill',
+                description: 'Arunachala is considered the embodiment of Lord Shiva as fire. The 2,660 ft hill is one of the most sacred places in South India. Circumambulating the 14km path (Girivalam) around the hill on full moon nights is believed to cleanse sins and bestow spiritual blessings. The path contains eight lingams representing the guardians of directions and numerous shrines. Many seekers meditate in caves on the hill, following the tradition of Ramana Maharshi. The hill is famous for the annual Karthigai Deepam festival when a massive lamp is lit at the summit, visible for 30km around.',
+                location: 'Adjacent to Arunachaleswarar Temple',
+                images: [
+                    'https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg',
+                    'https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg',
+                    'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg'
+                ]
+            },
+            ramana: {
+                title: 'Ramana Maharshi Ashram',
+                description: 'Sri Ramanasramam is one of the most famous spiritual centers in India, established around the sage Ramana Maharshi who lived here from 1922 until his death in 1950. The ashram attracts seekers from all over the world seeking peace and spiritual guidance. The main attractions include the samadhi (tomb) of Ramana Maharshi, the old hall where he sat and taught, the meditation hall, and the library containing his teachings. The ashram maintains a peaceful atmosphere with regular meditation sessions and chanting. It\'s not just a tourist spot but a living spiritual community.',
+                location: '2km from Arunachaleswarar Temple',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            },
+            skanda: {
+                title: 'Skanda Ashram',
+                description: 'Skanda Ashram was the first place Ramana Maharshi stayed on Arunachala Hill after his arrival in 1899. Located on the hillside, it offers breathtaking panoramic views of Tiruvannamalai town and the surrounding countryside. The ashram is smaller and more secluded than the main ashram, maintaining its original rustic charm. Nearby is Virupaksha Cave where Ramana meditated for many years. The peaceful atmosphere, natural surroundings, and spiritual vibrations make it an ideal place for meditation and contemplation.',
+                location: 'On Arunachala Hill, 3km trek from Temple',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            },
+            virupaksha: {
+                title: 'Virupaksha Cave',
+                description: 'This ancient cave, named after a previous saint who meditated here, was Ramana Maharshi\'s home for several years. The cave contains a natural Shiva lingam and a small platform where Ramana sat. The interior is simple yet powerfully spiritual, with energy that meditators still experience today. The cave is about 15 feet deep with a natural skylight providing illumination. Visitors can sit in meditation as countless seekers have done before. The cave\'s location offers beautiful views and a serene atmosphere away from worldly distractions.',
+                location: 'On Arunachala Hill, 2km trek from Temple',
+                images: [
+                    'https://images.pexels.com/photos/67478/pexels-photo-67478.jpeg',
+                    'https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg'
+                ]
+            },
+            seshadri: {
+                title: 'Seshadri Swamigal Ashram',
+                description: 'Seshadri Swamigal was a contemporary of Ramana Maharshi and another great saint of Tiruvannamalai. His ashram is known for its peaceful atmosphere and the saint\'s samadhi. Swamigal was known for his miracles and unique teaching methods. The ashram has a meditation hall and small temple dedicated to him. Many devotees visit to experience the spiritual vibrations and seek blessings. The ashram maintains daily worship and feeding programs for visitors.',
+                location: '1km from Arunachaleswarar Temple',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            },
+            pachai: {
+                title: 'Pachaiamman Temple',
+                description: 'Pachaiamman Temple is an ancient shrine dedicated to the goddess Pachaiamman, considered the guardian deity of Tiruvannamalai. The temple is particularly important as it marks the starting point of the Girivalam circumambulation path. Devotees traditionally offer prayers here before beginning their walk around Arunachala. The goddess is depicted in a fierce form but is considered benevolent to her devotees. The temple architecture reflects the Vijayanagara style with beautiful pillared halls and carvings.',
+                location: 'Near Arunachaleswarar Temple',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            },
+            girivalam: {
+                title: 'Girivalam Path Temples',
+                description: 'The 14km Girivalam path around Arunachala Hill contains eight sacred lingams dedicated to the guardians of the eight directions: Indra (East), Agni (Southeast), Yama (South), Niruthi (Southwest), Varuna (West), Vayu (Northwest), Kubera (North), and Esanya (Northeast). Each lingam has its own shrine and significance. Devotees stop at each to offer prayers, often performing specific rituals. The path also contains numerous smaller shrines, water tanks, and rest houses. Full moon nights see thousands of pilgrims walking the path, creating a vibrant spiritual atmosphere.',
+                location: '14km circumference around Arunachala Hill',
+                images: [
+                    'https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg',
+                    'https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg'
+                ]
+            },
+            museum: {
+                title: 'Arunachala Museum',
+                description: 'The museum houses a rich collection of artifacts related to the temple\'s history, including ancient inscriptions, sculptures, copper plates, photographs of saints, and ritual objects. Exhibits explain the significance of Arunachala in Hindu cosmology, the Pancha Bhoota concept, and the history of the temple\'s construction. There\'s a special section on Ramana Maharshi with photographs and personal items. The museum provides excellent context for understanding the spiritual and historical importance of the site.',
+                location: 'Near Arunachaleswarar Temple',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            }
+        };
+
+        function showSightseeingModal(id) {
+            const data = sightseeingData[id];
+            if (!data) return;
+            
+            document.getElementById('sightseeingTitle').textContent = data.title;
+            document.getElementById('sightseeingDescription').textContent = data.description;
+            document.getElementById('sightseeingLocation').textContent = data.location;
+            
+            // Store destination for directions
+            document.getElementById('sightseeingModal').setAttribute('data-destination', data.location);
+            
+            // Load images
+            const gallery = document.getElementById('sightseeingGallery');
+            gallery.innerHTML = '';
+            data.images.forEach(imgSrc => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.onclick = () => openFullImage(imgSrc);
+                gallery.appendChild(img);
+            });
+            
+            document.getElementById('sightseeingModal').style.display = 'flex';
+        }
+
+        function closeSightseeingModal() {
+            document.getElementById('sightseeingModal').style.display = 'none';
+        }
+
+        // Hotel Map Functions
+        function openHotelMap(hotelName, location) {
+            const query = encodeURIComponent(`${hotelName} ${location}`);
+            window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+        }
+
+        // Route Map Function with waypoints - Following Tirupati's structure
+        function openRouteMap(start, stops) {
+            const stopArray = stops.split(',').map(stop => stop.trim());
+            
+            console.log('All stops:', stopArray);
+            
+            const origin = encodeURIComponent(start);
+            const destination = encodeURIComponent(stopArray[stopArray.length - 1]);
+            const waypoints = stopArray.slice(0, -1).map(stop => encodeURIComponent(stop)).join('|');
+            
+            let url;
+            if (waypoints) {
+                url = `https://www.google.com/maps/dir/${origin}/${waypoints}/${destination}/@data=!3m1!4b1!4m2!4m1!3e0`;
+                console.log('Route with waypoints:', url);
+            } else {
+                url = `https://www.google.com/maps/dir/${origin}/${destination}`;
+            }
+            
+            window.open(url, '_blank');
+        }
+
+        // Directions from Temple
+        function openLocationMap() {
+            const destination = document.getElementById('sightseeingModal').getAttribute('data-destination');
+            if (destination) {
+                const origin = encodeURIComponent('Arunachaleswarar Temple, Tiruvannamalai');
+                const dest = encodeURIComponent(destination);
+                const url = `https://www.google.com/maps/dir/${origin}/${dest}`;
+                window.open(url, '_blank');
+            }
+        }
+
+        // Full Image Viewer
+        function openFullImage(src) {
+            window.open(src, '_blank');
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(event) {
+            const historyModal = document.getElementById('historyModal');
+            const sightseeingModal = document.getElementById('sightseeingModal');
+            
+            if (event.target === historyModal) {
+                closeHistoryModal();
+            }
+            if (event.target === sightseeingModal) {
+                closeSightseeingModal();
+            }
+        });
+    </script>
+</body>
+</html>

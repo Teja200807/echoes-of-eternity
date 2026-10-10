@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konark Sun Temple - Complete Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
+            color: #333;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        
+        .parallax-hero {
+            height: 100vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+                url('https://upload.wikimedia.org/wikipedia/commons/4/48/Konark_Sun_Temple.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 70%, #b71c1c 100%);
+        }
+        
+        .hero-nav {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+        }
+        
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 152, 0, 0.3);
+            padding: 12px 25px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 152, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 152, 0, 0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            color: #ff9800;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ff9800;
+            margin-bottom: 5px;
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            animation: bounce 2s infinite;
+            z-index: 3;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
+        }
+        
+        .content-wrapper {
+            background: #f8f9fa;
+            border-radius: 40px 40px 0 0;
+            margin-top: -40px;
+            position: relative;
+            z-index: 2;
+            padding: 80px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ff9800;
+        }
+        
+        .section-header i {
+            font-size: 2rem;
+            color: #ff9800;
+        }
+        
+        .section-header h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin: 0;
+        }
+        
+        .history-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .more-info-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        
+        .more-info-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255,152,0,0.3);
+        }
+        
+        .more-info-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .more-info-btn:hover i {
+            transform: translateX(5px);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .place-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .place-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: #ff9800;
+        }
+        
+        .place-card h4 {
+            background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
+            color: white;
+            padding: 20px;
+            margin: 0;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .place-card .place-location {
+            padding: 10px 20px;
+            background: #e9ecef;
+            color: #495057;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .place-card .place-location i {
+            color: #ff9800;
+        }
+        
+        .place-card p {
+            padding: 20px;
+            margin: 0;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .hotels-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .hotels-table th {
+            background: linear-gradient(135deg, #b71c1c 0%, #d32f2f 100%);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .hotels-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+        
+        .hotels-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .hotels-table .price {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        
+        .hotels-table .hotel-name {
+            color: #ff9800;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .hotels-table .hotel-name:hover {
+            color: #f57c00;
+            transform: translateX(3px);
+        }
+        
+        .hotels-table .hotel-name i {
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .hotels-table .hotel-name:hover i {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+        
+        .routes-container {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .route-card {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .route-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .route-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .route-icon {
+            background: #b71c1c;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .route-card:hover .route-icon {
+            transform: scale(1.1);
+            background: #ff9800;
+        }
+        
+        .route-header h4 {
+            color: #b71c1c;
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        
+        .route-stops {
+            list-style: none;
+            padding-left: 70px;
+        }
+        
+        .route-stops li {
+            padding: 8px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+        
+        .route-stops li:last-child {
+            border-bottom: none;
+        }
+        
+        .route-stops li i {
+            color: #ff9800;
+            width: 20px;
+        }
+        
+        .route-stops li .distance {
+            margin-left: auto;
+            color: #27ae60;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .route-total {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #b71c1c;
+            font-weight: 600;
+        }
+        
+        .route-total i {
+            color: #ff9800;
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 30px;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: slideUp 0.5s ease;
+            position: relative;
+        }
+        
+        .modal-header {
+            padding: 30px 30px 20px;
+            border-bottom: 2px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 10;
+            border-radius: 30px 30px 0 0;
+        }
+        
+        .modal-header h2 {
+            color: #ff9800;
+            font-size: 2rem;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: #ff9800;
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 30px;
+        }
+        
+        .modal-image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .modal-image-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .modal-image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .modal-description {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+        }
+        
+        .modal-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+        
+        .modal-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .modal-info-item i {
+            font-size: 1.5rem;
+            color: #ff9800;
+            width: 30px;
+        }
+        
+        .modal-info-item .info-content h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .modal-info-item .info-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .history-timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-year {
+            min-width: 100px;
+            background: linear-gradient(135deg, #ff9800, #f57c00);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            height: fit-content;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .timeline-content h4 {
+            color: #b71c1c;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .floating-nav {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+            border-radius: 50px;
+            padding: 15px 25px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .floating-nav a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+        .floating-nav a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .floating-nav {
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                gap: 10px;
+            }
+            .floating-nav a span {
+                display: none;
+            }
+            .floating-nav a i {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .parallax-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-stats {
+                gap: 15px;
+            }
+            
+            .stat-item {
+                min-width: 120px;
+                padding: 10px 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            .places-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hotels-table {
+                font-size: 0.9rem;
+            }
+            
+            .hotels-table th,
+            .hotels-table td {
+                padding: 10px;
+            }
+            
+            section {
+                padding: 25px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .timeline-year {
+                min-width: auto;
+                width: fit-content;
+            }
+            
+            .route-stops {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section with Parallax -->
+    <section class="parallax-hero">
+        <nav class="hero-nav">
+            <a href="main.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Konark Sun Temple</h1>
+            <div class="subtitle">UNESCO World Heritage Site | Odisha</div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">13th Cent</div>
+                    <div>Construction</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24</div>
+                    <div>Stone Wheels</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div>Stone Horses</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">229 ft</div>
+                    <div>Original Height</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i> Scroll for Details
+        </div>
+    </section>
+    
+    <!-- Main Content -->
+    <div class="content-wrapper">
+        <div class="container">
+            <!-- History Section -->
+            <section class="history-section" id="history">
+                <div class="section-header">
+                    <i class="fas fa-history"></i>
+                    <h2>History & Architecture</h2>
+                </div>
+                
+                <div class="history-content">
+                    <p>The Konark Sun Temple, built in 1250 CE by King Narasimhadeva I of the Eastern Ganga Dynasty, is an architectural masterpiece designed as a colossal stone chariot for the Sun God Surya. The temple represents the pinnacle of Kalinga architecture with its intricate carvings, massive proportions, and astronomical precision.</p>
+                    
+                    <div class="highlight-box">
+                        <h3>🏛️ The Black Pagoda</h3>
+                        <p>Known as the "Black Pagoda" to European sailors who used it as a navigation landmark, the temple features 24 intricately carved wheels (each functioning as a sundial) pulled by 7 mighty horses. The main sanctum once housed a floating idol of the Sun God, suspended by magnets.</p>
+                    </div>
+                    
+                    <button class="more-info-btn" onclick="showHistoryModal()">
+                        <i class="fas fa-info-circle"></i> More Information & Architecture Details
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+            
+            <!-- Sightseeing Section -->
+            <section class="sightseeing-section" id="sightseeing">
+                <div class="section-header">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h2>Top Sightseeing Places</h2>
+                </div>
+                
+                <div class="places-grid">
+                    <div class="place-card" onclick="showSightseeingModal('maintemple', 'Konark Sun Temple Main Complex')">
+                        <h4><i class="fas fa-sun"></i> Main Temple Complex</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Konark, Odisha
+                        </div>
+                        <p>The main temple is designed as a massive stone chariot with 24 elaborately carved wheels representing the hours of the day. Each wheel is 12 feet in diameter and functions as a precise sundial.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('wheels', 'Stone Wheels of Konark')">
+                        <h4><i class="fas fa-cog"></i> Stone Wheels</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Main Temple, Konark
+                        </div>
+                        <p>The 24 stone wheels are masterpieces of engineering and art. Each wheel is intricately carved with geometric patterns, mythological scenes, and celestial symbols. They represent the cycle of time (Kaal Chakra).</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('natya', 'Natya Mandapa')">
+                        <h4><i class="fas fa-drum"></i> Natya Mandapa</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Main Complex, Konark
+                        </div>
+                        <p>The Dancing Hall features exquisite carvings of celestial musicians and dancers. The acoustics are designed to enhance musical performances, and the walls depict dance poses still seen in Odissi classical dance.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('chandrabhaga', 'Chandrabhaga Beach')">
+                        <h4><i class="fas fa-umbrella-beach"></i> Chandrabhaga Beach</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> 3km from Konark Temple
+                        </div>
+                        <p>One of India's cleanest beaches with Blue Flag certification. Sacred beach mentioned in ancient texts, perfect for sunrise views over the Bay of Bengal, complementing the Sun Temple's orientation.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('museum', 'Konark Archaeological Museum')">
+                        <h4><i class="fas fa-landmark"></i> Konark Archaeological Museum</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> 1km from Temple, Konark
+                        </div>
+                        <p>ASI museum displaying sculptures, artifacts, and architectural fragments recovered from the temple site. Includes beautiful specimens of Kalinga art including celestial nymphs and mythical creatures.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('ramachandi', 'Ramachandi Temple')">
+                        <h4><i class="fas fa-female"></i> Ramachandi Temple</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> 5km from Konark
+                        </div>
+                        <p>Ancient temple at the confluence of Kushabhadra River and Bay of Bengal. Predates the Sun Temple and offers scenic river views and peaceful atmosphere away from crowds.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('mayadevi', 'Mayadevi Temple')">
+                        <h4><i class="fas fa-temple"></i> Mayadevi Temple</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Within Main Complex
+                        </div>
+                        <p>Smaller temple within the complex dedicated to Sun God's wife, Mayadevi. Predates the main temple and shows earlier architectural styles with beautiful sculptures of river goddesses.</p>
+                    </div>
+                    
+                    <div class="place-card" onclick="showSightseeingModal('interpretation', 'ASI Interpretation Centre')">
+                        <h4><i class="fas fa-info-circle"></i> ASI Interpretation Centre</h4>
+                        <div class="place-location">
+                            <i class="fas fa-map-marker-alt"></i> Near Temple Entrance
+                        </div>
+                        <p>Multimedia presentations explaining the temple's history, architecture, and conservation. Includes 3D models showing how the original temple looked before its collapse.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Hotels Section -->
+            <section class="hotels-section" id="hotels">
+                <div class="section-header">
+                    <i class="fas fa-hotel"></i>
+                    <h2>Hotels & Dining</h2>
+                </div>
+                
+                <table class="hotels-table">
+                    <tr>
+                        <th>Hotel/Restaurant</th>
+                        <th>Location</th>
+                        <th>Price</th>
+                        <th>Specialty</th>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Lotus Resort Konark', 'Beach Road, Konark')"><i class="fas fa-map-marker-alt"></i> Lotus Resort Konark</span></td>
+                        <td>Beach Road</td>
+                        <td class="price">₹4000+</td>
+                        <td>Beach View Luxury</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Sun Temple Hotel', 'Near Temple, Konark')"><i class="fas fa-map-marker-alt"></i> Sun Temple Hotel</span></td>
+                        <td>Near Temple</td>
+                        <td class="price">₹2500-4500</td>
+                        <td>Heritage Property</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Yatrinivas Konark', 'OTDC Property, Konark')"><i class="fas fa-map-marker-alt"></i> Yatrinivas Konark</span></td>
+                        <td>OTDC Property</td>
+                        <td class="price">₹2000-3500</td>
+                        <td>Government Approved</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Panthashala Konark', 'Puri-Konark Road')"><i class="fas fa-map-marker-alt"></i> Panthashala Konark</span></td>
+                        <td>Puri-Konark Road</td>
+                        <td class="price">₹1500-3000</td>
+                        <td>Budget Friendly</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Sun Valley Resort', 'Chandrabhaga, Konark')"><i class="fas fa-map-marker-alt"></i> Sun Valley Resort</span></td>
+                        <td>Chandrabhaga</td>
+                        <td class="price">₹3000-5000</td>
+                        <td>Family Resort</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Sun Temple Restaurant', 'Main Entrance, Konark')"><i class="fas fa-map-marker-alt"></i> Sun Temple Restaurant</span></td>
+                        <td>Main Entrance</td>
+                        <td class="price">₹200-500</td>
+                        <td>Odisha Thali</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Blue Sea Restaurant', 'Beach Road, Konark')"><i class="fas fa-map-marker-alt"></i> Blue Sea Restaurant</span></td>
+                        <td>Beach Road</td>
+                        <td class="price">₹300-700</td>
+                        <td>Seafood Special</td>
+                    </tr>
+                    <tr>
+                        <td><span class="hotel-name" onclick="openHotelMap('Mango Mist', 'Konark Market')"><i class="fas fa-map-marker-alt"></i> Mango Mist</span></td>
+                        <td>Konark Market</td>
+                        <td class="price">₹150-400</td>
+                        <td>Fresh Juices</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <!-- Routes Section -->
+            <section class="routes-section" id="routes">
+                <div class="section-header">
+                    <i class="fas fa-route"></i>
+                    <h2>Sightseeing Routes (Starting from Konark)</h2>
+                </div>
+                
+                <div class="routes-container">
+                    <!-- Day 1: Temple Circuit -->
+                    <div class="route-card" onclick="openRouteMap('Konark Bus Stand', 'Konark Sun Temple, Chandrabhaga Beach, Ramachandi Temple, Konark Bus Stand')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-1"></i>
+                            </div>
+                            <h4>Day 1: Temple & Beach Circuit</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Konark Bus Stand</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-sun"></i>
+                                <span>Konark Sun Temple (Main Shrine)</span>
+                                <span class="distance">2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-cog"></i>
+                                <span>Stone Wheels & Natya Mandapa</span>
+                                <span class="distance">+1 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-temple"></i>
+                                <span>Mayadevi Temple</span>
+                                <span class="distance">+0.5 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-landmark"></i>
+                                <span>ASI Interpretation Centre</span>
+                                <span class="distance">+0.5 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Chandrabhaga Beach</span>
+                                <span class="distance">3 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-female"></i>
+                                <span>Ramachandi Temple</span>
+                                <span class="distance">+5 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Return to Konark Bus Stand</span>
+                                <span class="distance">5 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 5-6 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 17 km</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 2: Heritage & Crafts Trail -->
+                    <div class="route-card" onclick="openRouteMap('Konark Bus Stand', 'Konark Museum, Pipili, Raghurajpur, Konark Bus Stand')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-2"></i>
+                            </div>
+                            <h4>Day 2: Heritage & Crafts Trail</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Konark Bus Stand</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-landmark"></i>
+                                <span>Konark Archaeological Museum</span>
+                                <span class="distance">1 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-paint-brush"></i>
+                                <span>Pipili (Applique Work Village)</span>
+                                <span class="distance">20 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Pipili Crafts Market</span>
+                                <span class="distance">+1 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-palette"></i>
+                                <span>Raghurajpur Artist Village</span>
+                                <span class="distance">+15 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-paint-brush"></i>
+                                <span>Pattachitra Painting Demo</span>
+                                <span class="distance">+1 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Return to Konark Bus Stand</span>
+                                <span class="distance">35 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 5-6 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 73 km</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 3: Puri Extension -->
+                    <div class="route-card" onclick="openRouteMap('Konark Bus Stand', 'Puri Jagannath Temple, Chilika Lake, Konark Bus Stand')">
+                        <div class="route-header">
+                            <div class="route-icon">
+                                <i class="fas fa-3"></i>
+                            </div>
+                            <h4>Day 3: Puri & Chilika Extension</h4>
+                        </div>
+                        <ul class="route-stops">
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span><strong>Start:</strong> Konark Bus Stand</span>
+                                <span class="distance">0 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-temple"></i>
+                                <span>Puri Jagannath Temple</span>
+                                <span class="distance">35 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-umbrella-beach"></i>
+                                <span>Puri Beach</span>
+                                <span class="distance">+2 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-water"></i>
+                                <span>Chilika Lake (Barkul)</span>
+                                <span class="distance">+50 km</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-ship"></i>
+                                <span>Boat Ride to Satapada</span>
+                                <span class="distance">25 km boat</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-dove"></i>
+                                <span>Nalabana Bird Sanctuary</span>
+                                <span class="distance">+15 km boat</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-undo"></i>
+                                <span><strong>End:</strong> Return to Konark Bus Stand</span>
+                                <span class="distance">85 km</span>
+                            </li>
+                        </ul>
+                        <div class="route-total">
+                            <span><i class="fas fa-clock"></i> Total Duration: 8-10 hours</span>
+                            <span><i class="fas fa-road"></i> Total Distance: 187 km + 40 km boat</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- History Modal -->
+    <div id="historyModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Complete History & Architecture of Konark Sun Temple</h2>
+                <button class="modal-close" onclick="closeHistoryModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-gallery">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/48/Konark_Sun_Temple.jpg" alt="Temple Main View" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg" alt="Temple Wheels" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/67478/pexels-photo-67478.jpeg" alt="Temple Architecture" onclick="openFullImage(this.src)">
+                    <img src="https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg" alt="Stone Carvings" onclick="openFullImage(this.src)">
+                </div>
+                
+                <div class="history-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1238-1264 AD</div>
+                        <div class="timeline-content">
+                            <h4>Construction by King Narasimhadeva I</h4>
+                            <p>The temple was built by King Narasimhadeva I of the Eastern Ganga Dynasty. According to legend, 1,200 artisans worked for 12 years to complete this masterpiece. The king dedicated the temple to Surya, the Sun God.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">13th Century</div>
+                        <div class="timeline-content">
+                            <h4>Architectural Marvel Completed</h4>
+                            <p>The temple originally stood 229 ft high, making it one of the tallest structures in ancient India. The main sanctum contained a massive sun idol made of chlorite stone, which appeared to float in air due to strategic magnet placement.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">16th Century</div>
+                        <div class="timeline-content">
+                            <h4>Partial Destruction</h4>
+                            <p>The main sanctum collapsed, possibly due to natural causes or invasion by Kalapahad. European sailors began calling it the "Black Pagoda" as a navigation landmark. The floating sun idol was lost.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1901-1903</div>
+                        <div class="timeline-content">
+                            <h4>First Conservation Efforts</h4>
+                            <p>The British Government's Archaeological Survey of India began conservation work under Lord Curzon. The debris was cleared, and the remaining structures were stabilized to prevent further collapse.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1984</div>
+                        <div class="timeline-content">
+                            <h4>UNESCO World Heritage Site</h4>
+                            <p>Konark Sun Temple was declared a UNESCO World Heritage Site, recognizing it as "the highest point of achievement of Kalinga architecture" with its harmonious integration of architectural form with sculptural ornamentation.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <i class="fas fa-archway"></i>
+                        <div class="info-content">
+                            <h4>Architectural Style</h4>
+                            <p>Kalinga architecture with intricate stone carvings</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-cog"></i>
+                        <div class="info-content">
+                            <h4>Stone Wheels</h4>
+                            <p>24 wheels, 12 ft diameter, each functioning as sundial</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-magnet"></i>
+                        <div class="info-content">
+                            <h4>Magnetic Technology</h4>
+                            <p>Iron plates and magnets made idol float in air</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <div class="info-content">
+                            <h4>Artistic Style</h4>
+                            <p>Celestial nymphs, dancers, musicians, erotic sculptures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sightseeing Modal -->
+    <div id="sightseeingModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="sightseeingTitle">Place Details</h2>
+                <button class="modal-close" onclick="closeSightseeingModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-image-gallery" id="sightseeingGallery">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+                
+                <p class="modal-description" id="sightseeingDescription"></p>
+                
+                <div class="modal-info-grid">
+                    <div class="modal-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info-content">
+                            <h4>Location</h4>
+                            <p id="sightseeingLocation"></p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-content">
+                            <h4>Best Time to Visit</h4>
+                            <p id="sightseeingTime">October to March</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <div class="info-content">
+                            <h4>Entry Fee</h4>
+                            <p id="sightseeingFee">₹40 (Indians) / ₹600 (Foreigners)</p>
+                        </div>
+                    </div>
+                    <div class="modal-info-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="info-content">
+                            <h4>Opening Hours</h4>
+                            <p id="sightseeingHours">Sunrise - Sunset</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="more-info-btn" onclick="openLocationMap()" style="margin-top: 20px; width: 100%; justify-content: center;">
+                    <i class="fas fa-directions"></i> Get Directions from Konark
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Scroll animation for sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add floating navigation
+            const nav = document.createElement('nav');
+            nav.className = 'floating-nav';
+            nav.innerHTML = `
+                <a href="#history"><i class="fas fa-history"></i> <span>History</span></a>
+                <a href="#sightseeing"><i class="fas fa-map-marked-alt"></i> <span>Sightseeing</span></a>
+                <a href="#hotels"><i class="fas fa-hotel"></i> <span>Hotels</span></a>
+                <a href="#routes"><i class="fas fa-route"></i> <span>Routes</span></a>
+            `;
+            document.body.appendChild(nav);
+        });
+        
+        // Parallax effect enhancement
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-hero');
+            const rate = scrolled * -0.5;
+            parallax.style.transform = `translate3d(0px, ${rate}px, 0px)`;
+        });
+
+        // History Modal Functions
+        function showHistoryModal() {
+            document.getElementById('historyModal').style.display = 'flex';
+        }
+
+        function closeHistoryModal() {
+            document.getElementById('historyModal').style.display = 'none';
+        }
+
+        // Sightseeing Modal Functions
+        const sightseeingData = {
+            maintemple: {
+                title: 'Konark Sun Temple Main Complex',
+                description: 'The main temple is designed as a colossal stone chariot representing the Sun God Surya\'s celestial vehicle. The temple originally stood 229 ft high with intricate carvings covering every surface. The chariot has 24 wheels, each 12 ft in diameter, carved with geometric patterns, mythological scenes, and celestial symbols. Seven stone horses (representing the days of the week) pull the chariot. The walls feature thousands of sculptures including deities, dancers, musicians, animals, and erotic scenes. The temple is aligned east-west so that the first rays of the sun would illuminate the main deity.',
+                location: 'Konark, Odisha',
+                destination: 'Konark Sun Temple, Odisha',
+                images: [
+                    'https://upload.wikimedia.org/wikipedia/commons/4/48/Konark_Sun_Temple.jpg',
+                    'https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg',
+                    'https://images.pexels.com/photos/67478/pexels-photo-67478.jpeg'
+                ]
+            },
+            wheels: {
+                title: 'Stone Wheels of Konark',
+                description: 'The 24 stone wheels are masterpieces of engineering and artistic excellence. Each wheel is intricately carved with eight major spokes and eight minor spokes, representing the 24 hours of the day. The wheels function as precise sundials - you can tell the time by the shadow cast by the spokes. Each wheel is uniquely decorated with different motifs including geometric patterns, foliage, animals, and celestial scenes. These wheels represent the cycle of time (Kaal Chakra) and are among the most photographed architectural features in India.',
+                location: 'Main Temple Complex, Konark',
+                destination: 'Konark Sun Temple, Odisha',
+                images: [
+                    'https://images.pexels.com/photos/2166553/pexels-photo-2166553.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            },
+            natya: {
+                title: 'Natya Mandapa (Dancing Hall)',
+                description: 'The Natya Mandapa is a magnificent pillared hall where temple dancers (Devadasis) performed ritual dances. The hall is elevated on a platform and features exquisitely carved pillars depicting celestial musicians (Gandharvas) and dancers (Apsaras). The ceiling is adorned with lotus motifs and geometric patterns. The acoustics of the hall are designed to enhance musical performances. The outer walls feature panels showing dance poses that are still part of Odissi classical dance tradition.',
+                location: 'Main Complex, Konark',
+                destination: 'Konark Sun Temple, Odisha',
+                images: [
+                    'https://images.pexels.com/photos/67478/pexels-photo-67478.jpeg',
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg'
+                ]
+            },
+            chandrabhaga: {
+                title: 'Chandrabhaga Beach',
+                description: 'Chandrabhaga Beach is one of India\'s cleanest and most beautiful beaches, located just 3 km from the Sun Temple. It\'s mentioned in ancient texts as a sacred place where the Chandrabhaga River meets the Bay of Bengal. The beach is famous for spectacular sunrises - watching the sun rise over the ocean here is a magical experience that complements the Sun Temple\'s spiritual significance. The beach has been awarded the Blue Flag certification for its cleanliness and environmental management.',
+                location: '3km from Konark Temple',
+                destination: 'Chandrabhaga Beach, Konark, Odisha',
+                images: [
+                    'https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg',
+                    'https://images.pexels.com/photos/3581364/pexels-photo-3581364.jpeg'
+                ]
+            },
+            museum: {
+                title: 'Konark Archaeological Museum',
+                description: 'The Konark Archaeological Museum, maintained by the Archaeological Survey of India, houses an exceptional collection of sculptures and architectural fragments recovered from the temple site. Exhibits include beautiful specimens of Kalinga art from the 13th century - celestial nymphs (Alasa Kanyas) in various poses, musicians, dancers, erotic sculptures, mythical creatures, and architectural elements. A model shows how the original temple looked before its collapse.',
+                location: '1km from Temple, Konark',
+                destination: 'Konark Archaeological Museum, Odisha',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            },
+            ramachandi: {
+                title: 'Ramachandi Temple',
+                description: 'Ramachandi Temple is an ancient shrine dedicated to Goddess Ramachandi, located at the scenic confluence of the Kushabhadra River and the Bay of Bengal. The temple predates the Sun Temple and represents an earlier phase of Odishan architecture. The setting is spectacular - the temple stands on a hillock overlooking the river meeting the sea. It\'s a peaceful spot away from crowds, perfect for quiet contemplation.',
+                location: '5km from Konark',
+                destination: 'Ramachandi Temple, Konark, Odisha',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            },
+            mayadevi: {
+                title: 'Mayadevi Temple',
+                description: 'The Mayadevi Temple is a smaller shrine within the main complex, dedicated to the Sun God\'s wife, Mayadevi. It predates the main temple and shows an earlier phase of architectural development. The temple contains beautiful sculptures of river goddesses Ganga and Yamuna at its entrance. The walls feature graceful celestial maidens and divine couples. The temple provides insight into the evolution of temple architecture in Odisha.',
+                location: 'Within Main Complex, Konark',
+                destination: 'Konark Sun Temple, Odisha',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            },
+            interpretation: {
+                title: 'ASI Interpretation Centre',
+                description: 'The Archaeological Survey of India\'s Interpretation Centre provides visitors with comprehensive information about the temple\'s history, architecture, and conservation. Multimedia presentations include 3D animations showing how the original temple looked, the engineering behind the floating idol, and the astronomical significance of the wheel sundials. Exhibits explain the conservation challenges and ongoing preservation work.',
+                location: 'Near Temple Entrance, Konark',
+                destination: 'Konark Sun Temple, Odisha',
+                images: [
+                    'https://images.pexels.com/photos/385977/pexels-photo-385977.jpeg',
+                    'https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg'
+                ]
+            }
+        };
+
+        function showSightseeingModal(id, title) {
+            const data = sightseeingData[id];
+            if (!data) return;
+            
+            document.getElementById('sightseeingTitle').textContent = data.title;
+            document.getElementById('sightseeingDescription').textContent = data.description;
+            document.getElementById('sightseeingLocation').textContent = data.location;
+            
+            // Store destination for directions
+            document.getElementById('sightseeingModal').setAttribute('data-destination', data.destination);
+            
+            // Load images
+            const gallery = document.getElementById('sightseeingGallery');
+            gallery.innerHTML = '';
+            data.images.forEach(imgSrc => {
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.onclick = () => openFullImage(imgSrc);
+                gallery.appendChild(img);
+            });
+            
+            document.getElementById('sightseeingModal').style.display = 'flex';
+        }
+
+        function closeSightseeingModal() {
+            document.getElementById('sightseeingModal').style.display = 'none';
+        }
+
+        // Hotel Map Functions
+        function openHotelMap(hotelName, location) {
+            const query = encodeURIComponent(`${hotelName} ${location}`);
+            window.open(`https://www.google.com/maps/search/?api=1&query=${query}`, '_blank');
+        }
+
+        // Route Map Function
+        function openRouteMap(start, stops) {
+            const stopArray = stops.split(',').map(stop => stop.trim());
+            console.log('All stops:', stopArray);
+            
+            const origin = encodeURIComponent(start);
+            const destination = encodeURIComponent(stopArray[stopArray.length - 1]);
+            const waypoints = stopArray.slice(0, -1).map(stop => encodeURIComponent(stop)).join('|');
+            
+            let url;
+            if (waypoints) {
+                url = `https://www.google.com/maps/dir/${origin}/${waypoints}/${destination}/@data=!3m1!4b1!4m2!4m1!3e0`;
+            } else {
+                url = `https://www.google.com/maps/dir/${origin}/${destination}`;
+            }
+            
+            window.open(url, '_blank');
+        }
+
+        // Function for sightseeing directions from Konark
+        function openLocationMap() {
+            const destination = document.getElementById('sightseeingModal').getAttribute('data-destination');
+            if (destination) {
+                const origin = encodeURIComponent('Konark, Odisha');
+                const dest = encodeURIComponent(destination);
+                const url = `https://www.google.com/maps/dir/${origin}/${dest}`;
+                window.open(url, '_blank');
+            }
+        }
+
+        // Full Image Viewer
+        function openFullImage(src) {
+            window.open(src, '_blank');
+        }
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(event) {
+            const historyModal = document.getElementById('historyModal');
+            const sightseeingModal = document.getElementById('sightseeingModal');
+            
+            if (event.target === historyModal) {
+                closeHistoryModal();
+            }
+            if (event.target === sightseeingModal) {
+                closeSightseeingModal();
+            }
+        });
+    </script>
+</body>
+</html>
